@@ -1,0 +1,17 @@
+proxies:
+- name: id-sanggoro.bypass.id
+  type: trojan
+  server: id-sanggoro.bypass.id
+  port: 443
+  password: pass
+  udp: true
+  sni: v9-id.tiktokcdn.com 
+  skip-cert-verify: true
+- name: id-argontj.bypass.id
+  type: trojan
+  server: id-argontj.bypass.id
+  port: 443
+  password: pass
+  udp: true
+  sni: v9-id.tiktokcdn.com 
+  skip-cert-verify: true
