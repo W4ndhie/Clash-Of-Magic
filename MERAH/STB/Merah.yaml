@@ -147,36 +147,46 @@ profile:
   store-fake-ip: true
 rule-providers:
   Direct:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/direct.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/direct.yaml
+    interval: 14400
   Gaming:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/gaming.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/gaming.yaml
+    interval: 14400
   Sosmed:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/sosmed.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/sosmed.yaml
+    interval: 14400
   Streaming:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/streaming.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/streaming.yaml
+    interval: 14400
   SpeedTest:
-    type: file
+    type: http
     behavior: classical
     path: "./rule_provider/SpeedTest.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/SpeedTest.yaml
+    interval: 14400
   adblock_energized_porn:
     type: http
     behavior: classical
     path: "./rule_provider/energized_porn.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/energized_porn.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/energized_porn.yaml
     interval: 14400
   adblock_Iklan:
     type: http
     behavior: classical
     path: "./rule_provider/Iklan.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/Iklan.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/Iklan.yaml
     interval: 14400
 rules:
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
