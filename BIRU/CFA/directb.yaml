@@ -1,0 +1,62 @@
+payload:
+  # Hotstar
+  - IP-CIDR,192.168.1.1/24
+
+  # > LAN
+
+  - DOMAIN-SUFFIX,cloud2.mikrotik.com
+  - DOMAIN-SUFFIX,cloud.mikrotik.com
+
+  - DST-PORT,30000
+
+  #DIRECT AKRAB by NOSIGNAL
+  
+  #WHATSAPP
+  - DOMAIN-SUFFIX,*.whatsapp.com
+  - DOMAIN-SUFFIX,*.whatsapp.net
+  - DOMAIN-SUFFIX,*.googleapis.com
+  - DOMAIN-KEYWORD,whatsapp
+  #MAPS
+  - DOMAIN-SUFFIX,mobilemaps.googleapis.com
+  - DOMAIN-SUFFIX,maps.google.com
+  - DOMAIN-SUFFIX,maps.gstatic.com
+  - DOMAIN-KEYWORD,maps
+  #ZOOM
+  - DOMAIN-KEYWORD,zoom.us
+  #HANGOUTS
+  - DOMAIN-SUFFIX,hangouts.google.com
+  - DOMAIN-KEYWORD,hangouts
+  #CLASSROOM
+  - DOMAIN-SUFFIX,classroom.google.com
+  - DOMAIN-KEYWORD,classroom
+  #MEET
+  - DOMAIN-SUFFIX,meet.google.com
+  - DOMAIN-KEYWORD,meetings
+  #KEMDIKBUD
+  - DOMAIN-SUFFIX,belajar.kemdikbud.go.id
+  - DOMAIN-KEYWORD,belajar
+  - DOMAIN-KEYWORD,kemdikbud
+  - DOMAIN-SUFFIX,spada.kemdikbud.go.id
+  - DOMAIN-KEYWORD,spada
+  #RUANGGURU
+  - DOMAIN-KEYWORD,ruangguru
+  #ZENIUS
+  - DOMAIN-KEYWORD,zenius
+  - DOMAIN-SUFFIX,*.zenius.net
+  #SEKOLAHMU
+  - DOMAIN-SUFFIX,*.sekolah.mu
+  #UDEMY
+  - DOMAIN-KEYWORD,udemy
+  - DOMAIN-SUFFIX,*.udemycdn.com
+  - DOMAIN-SUFFIX,*.udemy.com
+  #SKILLACADEMY
+  - DOMAIN-KEYWORD,skillacademy
+  - DOMAIN-SUFFIX,*.skillacademy.com
+  #UNIVERSITAS
+  - DOMAIN-KEYWORD,ac.id
+
+  # > myXL App
+  # Client Patch
+  - DOMAIN-KEYWORD,xlaxiata
+  - DOMAIN-KEYWORD,xlaxiata2
+  - DOMAIN-KEYWORD,xlaxiata-resources
