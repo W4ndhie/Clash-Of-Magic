@@ -3,7 +3,7 @@ proxies:
   server: 141.193.213.20
   port: 443
   type: trojan
-  password: 7f40f5e0-f6ac-11ec-8a89-1577c1651679
+  password: pass
   network: ws
   sni: sg-ovh.bypass.id
   skip-cert-verify: true
@@ -18,7 +18,7 @@ proxies:
   server: 141.193.213.20
   port: 443
   type: trojan
-  password: 93cf4f80-f6ac-11ec-8cb7-1577c1651679
+  password: pass
   network: ws
   sni: sggs.bypass.id
   skip-cert-verify: true
