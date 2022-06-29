@@ -1,0 +1,260 @@
+proxy-providers:
+  Akun Indo:
+    type: file
+    path: "./Akun Indo.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 60
+  Akun SG:
+    type: file
+    path: "./Akun SG.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 60
+  Gaming:
+    type: file
+    path: "./gamingap.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 60
+proxy-groups:
+- name: Porn
+  type: select
+  disable-udp: false
+  proxies:
+  - Browser
+  - REJECT
+- name: Iklan
+  type: select
+  disable-udp: false
+  proxies:
+  - Browser
+  - REJECT
+- name: Browser
+  type: select
+  disable-udp: false
+  proxies:
+  - All_Best_Ping
+  - VPN_load-balance
+  - VPNSelect
+- name: All_Best_Ping
+  type: url-test
+  disable-udp: false
+  proxies:
+  - URL-Test Indo
+  - URL-Test SG
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+- name: VPN_load-balance
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  proxies:
+  - URL-Test Indo
+  - URL-Test SG
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+- name: VPNSelect
+  type: select
+  use:
+  - Akun Indo
+  - Akun SG
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+- name: URL-Test Indo
+  type: url-test
+  disable-udp: false
+  use:
+  - Akun Indo
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+  tolerance: '30'
+- name: URL-Test SG
+  type: url-test
+  disable-udp: false
+  use:
+  - Akun SG
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+  tolerance: '30'
+- name: SpeedTest
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  proxies:
+  - VPN_load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+- name: Gaming
+  type: url-test
+  disable-udp: false
+  use:
+  - Gaming
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+- name: Streaming
+  type: select
+  disable-udp: false
+  proxies:
+  - URL-Test Indo
+  - URL-Test SG
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
+  unified-delay: true
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    ipcidr:
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 192.168.0.0/16
+    - 198.18.0.0/15
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - 224.0.0.0/4
+    - 240.0.0.0/4
+    - 255.255.255.255/32
+    domain:
+    - "+.google.com"
+    - "+.netflix.com"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.githubusercontent.com"
+    - "+.googlevideo.com"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
+  fake-ip-filter:
+  - "+.pool.ntp.org"
+  - ntp7.*.com
+  - ntp6.*.com
+  - ntp5.*.com
+  - ntp4.*.com
+  - ntp3.*.com
+  - ntp2.*.com
+  - ntp1.*.com
+  - ntp.*.com
+  - time7.*.com
+  - time6.*.com
+  - time5.*.com
+  - time4.*.com
+  - time3.*.com
+  - time2.*.com
+  - time1.*.com
+  - time.*.apple.com
+  - time.*.edu.cn
+  - time.*.gov
+  - time.*.com
+  - "*.home.arpa"
+  - "*.local"
+  - "*.test"
+  - "*.localhost"
+  - "*.invalid"
+  - "*.example"
+  - "*.localdomain"
+  - time1.cloud.tencent.com
+  - "*.ntp.org"
+  - "*.time.edu"
+  - "*.lan"
+  - "+.gvt2.com"
+  - "+.gvt1.com"
+  - "+.youtu.be"
+  - "+.googleapis.com"
+  - "+.googlevideo.com"
+  - "+.youtube.com"
+  - "+.tiktokcdn.com"
+  - "+.instagram.com"
+  - "+.whatsapp.net"
+  - "+.whatsapp.com"
+  - "+.cdninstagram.com"
+  - "+.fbcdn.net"
+  - "+.facebook.com"
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 8.8.8.8
+  - 8.8.4.4
+  - 1.1.1.1
+  - 1.0.0.1
+  nameserver-policy:
+    "+.google.com": 8.8.8.8
+    "+.facebook.com": 8.8.8.8
+    "+.fbcdn.net": 8.8.8.8
+    "+.whatsapp.com": 8.8.8.8
+    "+.youtube.com": 8.8.8.8
+    "+.ytimg.com": 8.8.8.8
+    "+.googleapis.com": 8.8.8.8
+    "+.googlevideo.com": 8.8.8.8
+    "+.gvt1.com": 8.8.8.8
+    "+.gvt2.com": 8.8.8.8
+    "+.garena.com": 9.9.9.9
+    "+.garena.co.id": 9.9.9.9
+    "+.garena.sg": 9.9.9.9
+    "+.garenanow.com": 9.9.9.9
+    "+.akamaihd.net": 9.9.9.9
+    "+.akamaized.com": 9.9.9.9
+    "+.mobilelegends.com": 9.9.9.9
+    "+.pubgmobile.com": 9.9.9.9
+    "+.krafton.com": 9.9.9.9
+  nameserver:
+  - 8.8.8.8
+  - 8.8.4.4
+  - 1.1.1.1
+  - 1.0.0.1
+  - https://cloudflare.com/dns-query
+  fallback:
+  - https://dns.cloudflare.com/dns-query
+  - https://1.1.1.1/dns-query
+  - tls://1.1.1.1:853
+rule-providers:
+  Direct:
+    type: file
+    behavior: classical
+    path: "./direct.yaml"
+  Gaming:
+    type: file
+    behavior: classical
+    path: "./gaminga.yaml"
+  Sosmed:
+    type: file
+    behavior: classical
+    path: "./sosmed.yaml"
+  Streaming:
+    type: file
+    behavior: classical
+    path: "./streaming.yaml"
+  SpeedTest:
+    type: file
+    behavior: classical
+    path: "./SpeedTest.yaml"
+  adblock_energized_porn:
+    type: file
+    behavior: classical
+    path: "./energized_porn.yaml"
+  adblock_Iklan:
+    type: file
+    behavior: classical
+    path: "./Iklan.yaml"
+rules:
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Gaming,Gaming
+- RULE-SET,Streaming,Streaming
+- RULE-SET,adblock_energized_porn,Porn
+- RULE-SET,adblock_Iklan,Iklan
+- MATCH,GLOBAL

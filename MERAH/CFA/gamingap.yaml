@@ -1,0 +1,9 @@
+proxies:
+- name: id-game.bypass.id
+  type: trojan
+  server: id-game.bypass.id
+  port: 443
+  password: 68bfd030-d9bd-11ec-b4bc-1577c1651679
+  udp: true
+  sni: v9-id.tiktokcdn.com 
+  skip-cert-verify: true

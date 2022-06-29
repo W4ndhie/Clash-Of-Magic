@@ -1,0 +1,17 @@
+proxies:
+- name: trojan-contabo2.bypass.id
+  type: trojan
+  server: trojan-contabo2.bypass.id
+  port: 443
+  password: eed7e600-ee6e-11ec-8da5-1577c1651679
+  udp: true
+  sni: v9-id.tiktokcdn.com
+  skip-cert-verify: true
+- name: sggs.bypass.id
+  type: trojan
+  server: sggs.bypass.id
+  port: 443
+  password: 12f1c9a0-ee6f-11ec-839a-1577c1651679
+  udp: true
+  sni: v9-id.tiktokcdn.com
+  skip-cert-verify: true
