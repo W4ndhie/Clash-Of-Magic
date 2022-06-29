@@ -3190,3 +3190,28 @@ payload:
   - DOMAIN-SUFFIX,plantsvszombies2.com
   - DOMAIN-SUFFIX,pvzgw2.com
   - DOMAIN-SUFFIX,pvzheroes.com
+  ## >> Honkai Impact3
+  - DST-PORT,27015
+  - DST-PORT,27036
+  - DST-PORT,27015
+  - DST-PORT,27031
+  - DST-PORT,27032
+  - DST-PORT,27033
+  - DST-PORT,27034
+  - DST-PORT,27035
+  - DST-PORT,27036
+  ## >> Genshin Impact
+  - DST-PORT,42472
+  - DST-PORT,22101
+  - DST-PORT,22102
+  - DST-PORT,42472
+
+  ## >> Perfectworld
+  - DST-PORT,29000
+
+  # > Ping
+  - DOMAIN-SUFFIX,bing.com
+  - DOMAIN-SUFFIX,choice.bing.com
+  - DOMAIN-SUFFIX,data.bing.com
+  - DOMAIN-SUFFIX,api.bing.com
+  - DOMAIN-SUFFIX,blogs.bing.com

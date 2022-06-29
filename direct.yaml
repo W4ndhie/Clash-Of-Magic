@@ -2,6 +2,13 @@ payload:
   # Hotstar
   - IP-CIDR,192.168.1.1/24
 
+  # > LAN
+
+  - DOMAIN-SUFFIX,cloud2.mikrotik.com
+  - DOMAIN-SUFFIX,cloud.mikrotik.com
+
+  - DST-PORT,30000
+
   # Whatsapp
   - DOMAIN-SUFFIX,m.me
   - DOMAIN-SUFFIX,oculus.com
@@ -23,16 +30,15 @@ payload:
   - DST-PORT,59234
 
   # TikTok
-  - DOMAIN-SUFFIX,byteoversea.com
-  - DOMAIN-SUFFIX,ibytedtos.com
-  - DOMAIN-SUFFIX,ipstatp.com
-  - DOMAIN-SUFFIX,muscdn.com
-  - DOMAIN-SUFFIX,musical.ly
-  - DOMAIN-SUFFIX,tiktok.com
-  - DOMAIN-SUFFIX,tik-tokapi.com
-  - DOMAIN-SUFFIX,tiktokcdn.com
-  - DOMAIN-SUFFIX,tiktokv.com
-  - DOMAIN-KEYWORD,-tiktokcdn-com
+#  - DOMAIN-SUFFIX,ibytedtos.com
+#  - DOMAIN-SUFFIX,ipstatp.com
+#  - DOMAIN-SUFFIX,muscdn.com
+#  - DOMAIN-SUFFIX,musical.ly
+#  - DOMAIN-SUFFIX,tiktok.com
+#  - DOMAIN-SUFFIX,tik-tokapi.com
+#  - DOMAIN-SUFFIX,tiktokcdn.com
+#  - DOMAIN-SUFFIX,tiktokv.com
+#  - DOMAIN-KEYWORD,-tiktokcdn-com
   # > tiktok
   - IP-CIDR,103.136.221.0/24
   
@@ -58,31 +64,31 @@ payload:
   # IP-CIDR,169.45.248.118/32
   
   # Line
-  - DOMAIN-SUFFIX,lin.ee
-  - DOMAIN-SUFFIX,line.me
-  - DOMAIN-SUFFIX,line.naver.jp
-  - DOMAIN-SUFFIX,line-apps.com
-  - DOMAIN-SUFFIX,line-cdn.net
-  - DOMAIN-SUFFIX,line-scdn.net
-  - DOMAIN-SUFFIX,nhncorp.jp
-  - DOMAIN-SUFFIX,naver.jp
-  - IP-CIDR,103.2.28.0/22
-  - IP-CIDR,119.235.224.0/21
-  - IP-CIDR,119.235.232.0/23
-  - IP-CIDR,119.235.235.0/24
-  - IP-CIDR,119.235.236.0/23
-  - IP-CIDR,125.6.146.0/24
-  - IP-CIDR,125.6.149.0/24
-  - IP-CIDR,125.6.190.0/24
-  - IP-CIDR,125.209.208.0/20
-  - IP-CIDR,203.104.103.0/24
-  - IP-CIDR,203.104.128.0/20
-  - IP-CIDR,203.174.66.64/26
-  - IP-CIDR,203.174.77.0/24
-  - IP-CIDR,103.2.30.0/23
-  - IP-CIDR,125.209.208.0/20
-  - IP-CIDR,147.92.128.0/17
-  - IP-CIDR,203.104.144.0/21
+  # DOMAIN-SUFFIX,lin.ee
+  # DOMAIN-SUFFIX,line.me
+  # DOMAIN-SUFFIX,line.naver.jp
+  # DOMAIN-SUFFIX,line-apps.com
+  # DOMAIN-SUFFIX,line-cdn.net
+  # DOMAIN-SUFFIX,line-scdn.net
+  # DOMAIN-SUFFIX,nhncorp.jp
+  # DOMAIN-SUFFIX,naver.jp
+  # IP-CIDR,103.2.28.0/22
+  # IP-CIDR,119.235.224.0/21
+  # IP-CIDR,119.235.232.0/23
+  # IP-CIDR,119.235.235.0/24
+  # IP-CIDR,119.235.236.0/23
+  # IP-CIDR,125.6.146.0/24
+  # IP-CIDR,125.6.149.0/24
+  # IP-CIDR,125.6.190.0/24
+  # IP-CIDR,125.209.208.0/20
+  # IP-CIDR,203.104.103.0/24
+  # IP-CIDR,203.104.128.0/20
+  # IP-CIDR,203.174.66.64/26
+  # IP-CIDR,203.174.77.0/24
+  # IP-CIDR,103.2.30.0/23
+  # IP-CIDR,125.209.208.0/20
+  # IP-CIDR,147.92.128.0/17
+  # IP-CIDR,203.104.144.0/21
 
   # > Spotify
   - PROCESS-NAME,com.spotify.music
@@ -5432,10 +5438,10 @@ payload:
   - DST-PORT,18000
 
   # > SMULE
-  - DOMAIN-SUFFIX,www.smule.com
-  - DOMAIN-SUFFIX,c-sf.smule.com
-  - DOMAIN-SUFFIX,w1-fa.cdn.smule.com
-  - DOMAIN-SUFFIX,api-sing.smule.com
-  - DOMAIN-SUFFIX,api-iris.smule.com
-  - DOMAIN-SUFFIX,u-sf.smule.com
-  - DOMAIN-SUFFIX,c-fa.cdn.smule.com
+#  - DOMAIN-SUFFIX,www.smule.com
+#  - DOMAIN-SUFFIX,c-sf.smule.com
+#  - DOMAIN-SUFFIX,w1-fa.cdn.smule.com
+#  - DOMAIN-SUFFIX,api-sing.smule.com
+#  - DOMAIN-SUFFIX,api-iris.smule.com
+#  - DOMAIN-SUFFIX,u-sf.smule.com
+#  - DOMAIN-SUFFIX,c-fa.cdn.smule.com
