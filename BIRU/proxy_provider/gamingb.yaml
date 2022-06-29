@@ -1,0 +1,14 @@
+proxies:
+- name: id-game.bypass.id
+  server: 141.193.213.20
+  port: 443
+  type: trojan
+  password: 68bfd030-d9bd-11ec-b4bc-1577c1651679
+  network: ws
+  sni: id-game.bypass.id
+  skip-cert-verify: true
+  udp: true
+  ws-opts:
+    path: /howdy
+    headers:
+        Host: id-game.bypass.id
