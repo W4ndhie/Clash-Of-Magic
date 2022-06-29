@@ -3,7 +3,7 @@ proxies:
   server: 141.193.213.20
   port: 443
   type: trojan
-  password: 3c579780-f6ac-11ec-9ed1-1577c1651679
+  password: pass
   network: ws
   sni: id-biznet.bypass.id
   skip-cert-verify: true
@@ -18,7 +18,7 @@ proxies:
   server: 141.193.213.20
   port: 443
   type: trojan
-  password: 60708540-f6ac-11ec-bd03-1577c1651679
+  password: pass
   network: ws
   sni: id-argontj.bypass.id
   skip-cert-verify: true
