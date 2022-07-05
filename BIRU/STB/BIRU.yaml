@@ -150,43 +150,43 @@ rule-providers:
     type: http
     behavior: classical
     path: "./rule_provider/direct.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/direct.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/BIRU/STB/rule_provider/directb.yaml
     interval: 14400
   Gaming:
     type: http
     behavior: classical
     path: "./rule_provider/gamingb.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/gamingb.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/BIRU/STB/rule_provider/gamingb.yaml
     interval: 14400
   Sosmed:
     type: http
     behavior: classical
     path: "./rule_provider/sosmedb.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/sosmedb.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/BIRU/STB/rule_provider/sosmedb.yaml
     interval: 14400
   Streaming:
     type: http
     behavior: classical
     path: "./rule_provider/streamingb.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/streamingb.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/BIRU/STB/rule_provider/streamingb.yaml
     interval: 14400
   SpeedTest:
     type: http
     behavior: classical
     path: "./rule_provider/SpeedTestb.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/SpeedTestb.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/BIRU/STB/rule_provider/SpeedTestb.yaml
     interval: 14400
   adblock_energized_porn:
     type: http
     behavior: classical
     path: "./rule_provider/energized_pornb.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/energized_pornb.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/BIRU/STB/rule_provider/energized_pornb.yaml
     interval: 14400
   adblock_Iklan:
     type: http
     behavior: classical
     path: "./rule_provider/Iklanb.yaml"
-    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/Iklanb.yaml
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/BIRU/STB/rule_provider/Iklanb.yaml
     interval: 14400
 rules:
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
