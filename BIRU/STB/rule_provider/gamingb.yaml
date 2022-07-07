@@ -2158,3 +2158,10 @@ payload:
   - DST-PORT,42472
   #PW
   - DST-PORT,29000
+
+  # > Ping
+  - DOMAIN-SUFFIX,bing.com
+  - DOMAIN-SUFFIX,choice.bing.com
+  - DOMAIN-SUFFIX,data.bing.com
+  - DOMAIN-SUFFIX,api.bing.com
+  - DOMAIN-SUFFIX,blogs.bing.com
