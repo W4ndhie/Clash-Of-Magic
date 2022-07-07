@@ -6,10 +6,9 @@ payload:
 
   - DOMAIN-SUFFIX,cloud2.mikrotik.com
   - DOMAIN-SUFFIX,cloud.mikrotik.com
-
   - DST-PORT,30000
 
-  # Whatsapp
+ # Whatsapp
   - DOMAIN-SUFFIX,m.me
   - DOMAIN-SUFFIX,oculus.com
   - DOMAIN-SUFFIX,oculuscdn.com
@@ -40,7 +39,7 @@ payload:
 #  - DOMAIN-SUFFIX,tiktokv.com
 #  - DOMAIN-KEYWORD,-tiktokcdn-com
   # > tiktok
-  - IP-CIDR,103.136.221.0/24
+ - IP-CIDR,103.136.221.0/24
   
   # Facebook
   # DOMAIN-SUFFIX,m.me
