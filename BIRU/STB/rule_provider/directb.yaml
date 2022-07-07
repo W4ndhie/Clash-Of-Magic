@@ -6,7 +6,6 @@ payload:
 
   - DOMAIN-SUFFIX,cloud2.mikrotik.com
   - DOMAIN-SUFFIX,cloud.mikrotik.com
-
   - DST-PORT,30000
 
   #DIRECT AKRAB by NOSIGNAL
