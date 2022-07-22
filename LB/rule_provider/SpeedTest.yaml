@@ -1,0 +1,15 @@
+payload:
+
+  # Created By: Creativy24
+  # Chatme FOr More Rule 082291915543
+  
+  # > SpeedTest
+  - DST-PORT,8080
+
+  # Zerotier
+  - DOMAIN,my.zerotier.com
+  - DOMAIN-SUFFIX,zerotier.com
+  - DST-PORT,9993
+  - DST-PORT,29994
+  - DST-PORT,40775
+  - DST-PORT,43215

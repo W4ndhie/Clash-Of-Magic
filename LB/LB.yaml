@@ -1,0 +1,210 @@
+---
+proxy-groups:
+- name: Porn
+  type: select
+  disable-udp: false
+  proxies:
+  - Browser
+  - REJECT
+- name: Iklan
+  type: select
+  disable-udp: false
+  proxies:
+  - Browser
+  - REJECT
+- name: Browser
+  type: select
+  disable-udp: false
+  proxies:
+  - All_Best_Ping
+  - VPN_load-balance
+  - VPNSelect
+- name: All_Best_Ping
+  type: url-test
+  disable-udp: false
+  proxies:
+  - XL
+  - TSEL
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+  tolerance: '150'
+- name: VPN_load-balance
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  proxies:
+  - XL
+  - TSEL
+  url: http://www.gstatic.com/generate_204
+  interval: '300'
+- name: VPNSelect
+  type: select
+  disable-udp: false
+  proxies:
+  - XL
+  - TSEL
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+- name: URL-Test XL
+  type: url-test
+  disable-udp: false
+  proxies:
+  - XL
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+  tolerance: '30'
+- name: URL-Test TSEL
+  type: url-test
+  disable-udp: false
+  proxies:
+  - TSEL
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+  tolerance: '30'
+- name: SpeedTest
+  type: load-balance
+  strategy: round-robin
+  disable-udp: false
+  proxies:
+  - VPN_load-balance
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+- name: Gaming
+  type: select
+  disable-udp: false
+  use:
+  - AKUN-GAME
+  url: http://www.gstatic.com/generate_204
+  interval: '60'
+- name: XL
+  type: fallback
+  disable-udp: false
+  use:
+  - AKUN-XL
+  url: http://www.gstatic.com/generate_204
+  interval: '300'
+- name: TSEL
+  type: fallback
+  disable-udp: false
+  use:
+  - AKUN-TSEL
+  url: http://www.gstatic.com/generate_204
+  interval: '300'
+dns:
+  nameserver:
+  - 192.168.9.1
+  - 192.168.8.1
+  - dhcp://"eth2"
+  - dhcp://"eth1"
+  - https://dns.adguard.com/dns-query
+  - https://dns-google.com/dns-query
+  - tls://dns.adguard.com
+  - tls://dns-google.com/
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  listen: 127.0.0.1:7874
+  fake-ip-filter:
+  - "+.*"
+  default-nameserver:
+  - 192.168.9.1
+  - 192.168.8.1
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: rule
+unified-delay: true
+log-level: info
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: reyre
+bind-address: "*"
+external-ui: "/usr/share/openclash/dashboard"
+ipv6: false
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+  - tcp://8.8.8.8:53
+  - tcp://8.8.4.4:53
+profile:
+  store-selected: true
+  store-fake-ip: true
+rules:
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- RULE-SET,DIRECT,DIRECT
+- RULE-SET,Gaming,Gaming
+- RULE-SET,REJECT,REJECT
+- RULE-SET,Sosmed,VPN_load-balance,XL,TSEL
+- RULE-SET,Streaming,VPN_load-balance,XL,TSEL
+- RULE-SET,adblock_energized_porn,Porn
+- RULE-SET,adblock_Iklan,Iklan
+- MATCH,GLOBAL
+rule-providers:
+  DIRECT:
+    type: file
+    behavior: classical
+    path: "./rule_provider/DIRECT.yaml"
+  REJECT:
+    type: file
+    behavior: classical
+    path: "./rule_provider/REJECT.yaml"
+  Gaming:
+    type: file
+    behavior: classical
+    path: "./rule_provider/gaming.yaml"
+  Sosmed:
+    type: http
+    behavior: classical
+    path: "./rule_provider/sosmed.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/sosmed.yaml
+    interval: 14400
+  Streaming:
+    type: http
+    behavior: classical
+    path: "./rule_provider/streaming.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/streaming.yaml
+    interval: 14400
+  SpeedTest:
+    type: http
+    behavior: classical
+    path: "./rule_provider/SpeedTest.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/SpeedTest.yaml
+    interval: 14400
+  adblock_energized_porn:
+    type: http
+    behavior: classical
+    path: "./rule_provider/energized_porn.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/energized_porn.yaml
+    interval: 14400
+  adblock_Iklan:
+    type: http
+    behavior: classical
+    path: "./rule_provider/Iklan.yaml"
+    url: https://raw.githubusercontent.com/W4ndhie/Clash-Of-Magic/main/MERAH/STB/rule_provider/Iklan.yaml
+    interval: 14400
+proxy-providers:
+  AKUN-XL:
+    type: file
+    path: "./proxy_provider/AKUN-XL.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  AKUN-TSEL:
+    type: file
+    path: "./proxy_provider/AKUN-TSEL.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  AKUN-GAME:
+    type: file
+    path: "./proxy_provider/AKUN-GAME.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300

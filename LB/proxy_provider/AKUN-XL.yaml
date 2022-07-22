@@ -1,0 +1,57 @@
+proxies:
+- name: id-argontj.biru
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: 47b33c60-ee70-11ec-b6dd-1577c1651679
+  udp: true
+  sni: id-argontj.bypass.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: "/howdy"
+    headers:
+      Host: id-argontj.bypass.id
+  interface-name: eth1
+- name: sggs.bypass.biru
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: 12f1c9a0-ee6f-11ec-839a-1577c1651679
+  udp: true
+  sni: sggs.bypass.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: "/howdy"
+    headers:
+      Host: sggs.bypass.id
+  interface-name: eth1
+- name: trojan-contabo2.biru
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: eed7e600-ee6e-11ec-8da5-1577c1651679
+  udp: true
+  sni: trojan-contabo2.bypass.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: "/howdy"
+    headers:
+      Host: trojan-contabo2.bypass.id
+  interface-name: eth1
+- name: id-sanggoro.biru
+  server: 172.67.199.34
+  port: 443
+  type: trojan
+  password: ac0c21a0-ee6f-11ec-8822-1577c1651679
+  udp: true
+  sni: id-sanggoro.bypass.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: "/howdy"
+    headers:
+      Host: id-sanggoro.bypass.id
+  interface-name: eth1
