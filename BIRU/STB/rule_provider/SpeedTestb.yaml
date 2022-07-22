@@ -5,3 +5,11 @@ payload:
   
   # > SpeedTest
   - DST-PORT,8080
+  
+  # Zerotier
+  - DOMAIN,my.zerotier.com
+  - DOMAIN-SUFFIX,zerotier.com
+  - DST-PORT,9993
+  - DST-PORT,29994
+  - DST-PORT,40775
+  - DST-PORT,43215
